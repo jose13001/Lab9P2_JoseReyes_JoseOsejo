@@ -9,6 +9,28 @@ package lab9p2_josereyes_joseosejo;
  *
  * @author josec
  */
-public class Maestro {
+public class Maestro extends Usuario{
+    public int IDmaestro;
+
+    public Maestro(int IDmaestro, String nombre, String usuario, String pass) {
+        super(nombre, usuario, pass);
+        this.IDmaestro = IDmaestro;
+    }
+
+    public int getIDmaestro() {
+        return IDmaestro;
+    }
+
+    public void setIDmaestro(int IDmaestro) {
+        this.IDmaestro = IDmaestro;
+    }
+
+    @Override
+    public String toString() {
+        return super.getNombre();
+    }
+    
+    
+    
     
 }
