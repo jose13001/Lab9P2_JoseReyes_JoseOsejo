@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author josec
  */
-public class hilo_cronometro {
+public class hilo_cronometro extends Thread{
     private boolean tiempo;
     private boolean run;
     private JLabel segundos;
@@ -24,14 +24,15 @@ public class hilo_cronometro {
     }
 
     
-    public void setAvanzar(boolean avanzar) {
-        this.tiempo = avanzar;
+    public void setTiempo(boolean tiempo) {
+        this.tiempo = tiempo;
     }
 
-    public void setVive(boolean vive) {
-        this.run = vive;
+    public void setRun(boolean run) {
+        this.run = run;
     }
     
+    @Override
     public void run() {
         int total = 0;
         while (run) {
@@ -39,10 +40,10 @@ public class hilo_cronometro {
             if (tiempo) {
                 int i = 0; 
                 int t = 0;
-                while (i < 61){
+                while (i < 60){
                     
                     segundos.setText(t+ ":"+i+" minutos");
-                    if (i == 60){
+                    if (i == 59){
                         t++;
                         total += t;
                         JOptionPane.showMessageDialog(null, "Han pasado " + total + " minutos");

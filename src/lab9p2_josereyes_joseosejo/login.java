@@ -21,12 +21,8 @@ import javax.swing.JOptionPane;
  */
 public class login extends javax.swing.JFrame {
 
-    static dba dba;
     public login() {
-        dba=new dba("neoBlackboard1.accdb");
-        this.setVisible(true);
-        initComponents();
-        this.setLocationRelativeTo(null);
+        
     }
 
     /**
